@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h1 class="display-4">My Gallery</h1>
+			<p class="lead">A place to show your love and skills. </p>
+			<a class="btn btn-warning btn-lg" href="/galleries/new" role="button">Add New Photos!</a>
+		</div>
+		<div class="row text-center">
+			<% photos.forEach(function(photo){ %>
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnail">
+						<img src="<%= photo.image %>">
+						<div class="caption">
+							<h4>
+								<%= photo.name %>
+							</h4>
+						</div>
+						<p>
+							<a href="/galleries/<%= photo._id %>" class="btn btn-warning">More Info</a>
+						</p>
+					</div>
+				</div>
+			<% }); %>
+		</div>
+	</div>
+	
+
+	<% include ../partials/footer %>
